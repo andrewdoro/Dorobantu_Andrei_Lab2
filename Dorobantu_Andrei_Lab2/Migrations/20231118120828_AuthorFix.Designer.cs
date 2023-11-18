@@ -3,6 +3,7 @@ using System;
 using Dorobantu_Andrei_Lab2.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Dorobantu_Andrei_Lab2.Migrations
 {
     [DbContext(typeof(Dorobantu_Andrei_Lab2Context))]
-    partial class Dorobantu_Andrei_Lab2ContextModelSnapshot : ModelSnapshot
+    [Migration("20231118120828_AuthorFix")]
+    partial class AuthorFix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.25");
