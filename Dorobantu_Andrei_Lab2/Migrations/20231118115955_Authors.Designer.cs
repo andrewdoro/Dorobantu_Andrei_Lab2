@@ -3,6 +3,7 @@ using System;
 using Dorobantu_Andrei_Lab2.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Dorobantu_Andrei_Lab2.Migrations
 {
     [DbContext(typeof(Dorobantu_Andrei_Lab2Context))]
-    partial class Dorobantu_Andrei_Lab2ContextModelSnapshot : ModelSnapshot
+    [Migration("20231118115955_Authors")]
+    partial class Authors
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.25");
@@ -42,7 +44,7 @@ namespace Dorobantu_Andrei_Lab2.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("AuthorID")
+                    b.Property<int?>("AuthorId")
                         .HasColumnType("INTEGER");
 
                     b.Property<decimal>("Price")
@@ -60,7 +62,7 @@ namespace Dorobantu_Andrei_Lab2.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("AuthorID");
+                    b.HasIndex("AuthorId");
 
                     b.HasIndex("PublisherID");
 
@@ -86,7 +88,7 @@ namespace Dorobantu_Andrei_Lab2.Migrations
                 {
                     b.HasOne("Dorobantu_Andrei_Lab2.Models.Author", "Author")
                         .WithMany("Books")
-                        .HasForeignKey("AuthorID");
+                        .HasForeignKey("AuthorId");
 
                     b.HasOne("Dorobantu_Andrei_Lab2.Models.Publisher", "Publisher")
                         .WithMany("Books")
